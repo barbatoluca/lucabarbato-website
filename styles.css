@@ -311,6 +311,11 @@ a:hover { color: var(--accent-warm); }
    Research / Papers
    ============================================================== */
 
+.research__preamble {
+  max-width: 64ch; font-size: 1.05rem; color: var(--text);
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+}
+
 .paper-list { display: grid; gap: 1rem; }
 
 .paper-card {
@@ -328,6 +333,7 @@ a:hover { color: var(--accent-warm); }
 }
 .paper-card__title { font-size: 1.2rem; font-family: var(--font-serif); font-weight: 600; margin: 0; }
 .paper-card__coauthors { margin: 0.35rem 0 0.9rem; color: var(--muted); font-size: 0.92rem; font-style: italic; }
+.paper-card__desc { margin: 0.6rem 0 0; color: var(--text); font-size: 0.97rem; max-width: 64ch; }
 .paper-card__abstract { margin-top: 0.75rem; color: var(--text); }
 .paper-card__abstract summary {
   cursor: pointer; font-size: 0.88rem; font-weight: 500; color: var(--accent);
@@ -386,45 +392,26 @@ a:hover { color: var(--accent-warm); }
 .course-card__title { font-size: 1.15rem; margin-bottom: 0.35rem; }
 .course-card__role { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.7rem; }
 .course-card__desc { font-size: 0.95rem; color: var(--text); margin: 0 0 0.9rem; }
+.course-card__eval {
+  display: inline-flex; align-items: baseline; gap: 0.55rem;
+  margin: 0 0 1rem; padding: 0.5rem 0.9rem;
+  background: color-mix(in srgb, var(--accent-warm) 12%, transparent);
+  border-radius: var(--radius-sm);
+}
+.course-card__eval-score {
+  font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem;
+  color: var(--accent-warm); letter-spacing: 0.01em;
+}
+.course-card__eval-label {
+  font-size: 0.78rem; letter-spacing: 0.04em; color: var(--muted);
+}
 .course-card__links { display: flex; gap: 1rem; }
-
-/* ==============================================================
-   Collaboration
-   ============================================================== */
-
-.collab__wrap { max-width: 760px; }
-.collab__body p { font-size: 1.05rem; }
-.collab__body .btn { margin-top: 0.75rem; }
 
 /* ==============================================================
    CV
    ============================================================== */
 
-.cv__grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 4rem);
-  align-items: start;
-}
-@media (max-width: 820px) { .cv__grid { grid-template-columns: 1fr; } }
-
-.cv__download p { font-size: 1.02rem; max-width: 40ch; }
-
-.timeline {
-  list-style: none; padding: 0; margin: 0;
-  border-left: 2px solid var(--border); padding-left: 1.5rem;
-}
-.timeline li { position: relative; padding-bottom: 1.5rem; }
-.timeline li::before {
-  content: ""; position: absolute; left: -1.65rem; top: 0.35rem;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 0 0 4px var(--bg);
-}
-.section--alt .timeline li::before { box-shadow: 0 0 0 4px var(--surface-alt); }
-.timeline__years {
-  display: block; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--accent-warm); font-weight: 600; margin-bottom: 0.2rem;
-}
-.timeline h4 { font-size: 1.05rem; margin: 0 0 0.15rem; }
-.timeline p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.cv__download p { font-size: 1.05rem; max-width: 60ch; }
 
 /* ==============================================================
    Contact

@@ -37,16 +37,30 @@ Every placeholder is commented with `<!-- PLACEHOLDER: ... -->` (or `// PLACEHOL
 grep -rn PLACEHOLDER .
 ```
 
-### Add a new working paper
+### Add a new project or working paper
 
-Open [index.html](index.html), find `<!-- Working Papers -->`, and duplicate the `paper-card` block:
+Open [index.html](index.html), find the Research section, and duplicate one of the `paper-card` blocks. Two patterns:
+
+**Short — title + status + 1–2 sentence description** (matches current WIP cards):
+
+```html
+<article class="paper-card">
+  <div class="paper-card__head">
+    <h4 class="paper-card__title">Your project title</h4>
+    <span class="status status--wip">Work in Progress</span>
+    <!-- status classes: status--wip | status--review | status--published -->
+  </div>
+  <p class="paper-card__desc">One- or two-sentence description.</p>
+</article>
+```
+
+**Full — coauthors, expandable abstract, PDF link** (use once a draft exists):
 
 ```html
 <article class="paper-card">
   <div class="paper-card__head">
     <h4 class="paper-card__title">Your paper title</h4>
-    <span class="status status--wip">Work in Progress</span>
-    <!-- status classes: status--wip | status--review | status--published -->
+    <span class="status status--review">Under Review</span>
   </div>
   <p class="paper-card__coauthors">with Coauthor A, Coauthor B</p>
   <details class="paper-card__abstract">
@@ -60,7 +74,7 @@ Open [index.html](index.html), find `<!-- Working Papers -->`, and duplicate the
 </article>
 ```
 
-Drop the PDF into `assets/` (name lowercase-with-hyphens) and link to it.
+Drop any PDF into `assets/` (name lowercase-with-hyphens) and link to it.
 
 ### Add a new course
 
@@ -88,7 +102,7 @@ Find the Teaching section and duplicate the `course-card` block:
 
 ### Change social/contact links
 
-Search for `<!-- PLACEHOLDER: Replace href="#" with ... -->` in [index.html](index.html). Three cards have `href="#"`: LinkedIn, Google Scholar, Twitter/X. Fill them in or delete the card entirely.
+Search for `<!-- PLACEHOLDER: Replace href="#" with ... -->` in [index.html](index.html). The Twitter/X card has `href="#"` — fill it in or delete the card entirely. To add Google Scholar back, copy the Email card markup, swap the label/value/href.
 
 ### Re-theme colours
 
@@ -151,7 +165,7 @@ Meta tags, Open Graph, and Twitter cards are already set in `<head>` of [index.h
 - `<link rel="canonical">` and `<meta property="og:*">` URLs are already set to `https://lucabarbato.com/`. Nothing to change unless you use a different domain.
 - Bump `<lastmod>` in `sitemap.xml` when you add a paper.
 - Submit the site to **Google Search Console** once DNS is live: add `https://lucabarbato.com/` as a property, verify via DNS TXT record (Cloudflare makes this easy), submit `sitemap.xml`.
-- For academic indexing specifically, ensure your Google Scholar profile (link in Contact section) and LSE profile both link back to `lucabarbato.com`. Google Scholar picks up author sites via the profile's homepage field.
+- For academic indexing specifically, ensure your LSE profile and (when you create one) your Google Scholar profile both link back to `lucabarbato.com`. Google Scholar picks up author sites via the profile's homepage field.
 
 ## Browser support
 
