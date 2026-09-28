@@ -405,6 +405,8 @@ a:hover { color: var(--accent-warm); }
 .course-card__eval-label {
   font-size: 0.78rem; letter-spacing: 0.04em; color: var(--muted);
 }
+.course-card__badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1rem; }
+.course-card__badges .course-card__eval { margin: 0; }
 .course-card__links { display: flex; gap: 1rem; }
 
 /* ==============================================================
